@@ -1,18 +1,11 @@
 #Number Guessing Game Objectives:
 #from art import logo 
-
 import random
-
-#print(logo)
-
-number =30
-
-
-
-# the number guess will be random.randint(1-100)
+from art import logo 
+print(logo)
 
 # Allow the player to submit a guess for a number between 1 and 100. do we want a function that takes in the number of guesses? 
-
+number = random.randint(1,100)
 def guessing_game(number_of):
  while number_of != 0:
     number_of=number_of-1
@@ -26,12 +19,25 @@ def guessing_game(number_of):
     if guess == number:
       print(f"Congratulations you've guessed the number! It was {number}")
       return
-print(f"You've run out of guesses you lose, the number was {number} ")
+ if number_of==0:
+  print(f"You've run out of guesses, the number was {number}")
       
-guessing_game(5)
+def game_function():
+  print("Welcome to the guessing game!")
+  level=input("Do you want to play on the easy or hard level?: ")
+  if level =='easy':
+    guessing_game(10)
+  else:
+    guessing_game(5)
 
 
-# If they run out of turns, provide feedback to the player.
+
+
+
+
 
 # Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
 
+
+
+game_function()
